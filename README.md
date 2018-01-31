@@ -1,27 +1,16 @@
-# GetAngular
+本源码来自来自慕课网的课程[Angular 4.0从入门到实战 打造股票管理网站](https://coding.imooc.com/learn/list/94.html).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
+前端代码位于`client/`，运行如下命令进行开发：
 
-## Development server
+    cd client
+    // 默认是启动 dev env
+    npm run start
+    // 如果启动 prod env
+    npm serve ng serve --proxy-config proxy.conf.json --env=prod
+    // 编译与合并
+    ng build //编译产出位于`client/dist`下，可用apache或nginx运行，也可全部复制到`server/client`下，然后启动后端服务
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+后端代码位于`server/`下，使用nodejs启动即可：
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    cd server
+    node build/stock_server.js
